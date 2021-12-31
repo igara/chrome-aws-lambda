@@ -1,7 +1,7 @@
 {
   "name": "chrome-aws-lambda",
   "private": false,
-  "version": "10.1.0",
+  "version": "13.0.1",
   "author": {
     "name": "Alix Axel"
   },
@@ -15,7 +15,7 @@
     "typings"
   ],
   "engines": {
-    "node": ">= 10.16"
+    "node": ">= 14.18"
   },
   "scripts": {
     "build": "rimraf build && tsc -p tsconfig.json",

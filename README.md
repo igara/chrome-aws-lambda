@@ -1,3 +1,7 @@
+monorepo project
+
+see https://github.com/igara/syonet_eight
+
 # chrome-aws-lambda
 
 [![chrome-aws-lambda](https://img.shields.io/npm/v/chrome-aws-lambda.svg?style=for-the-badge)](https://www.npmjs.com/package/chrome-aws-lambda)
@@ -102,9 +106,9 @@ The Amazon Linux 2 AWS Lambda runtime is no longer provisioned with any font fac
 
 Because of this, this package ships with [Open Sans](https://fonts.google.com/specimen/Open+Sans), which supports the following scripts:
 
-* Latin
-* Greek
-* Cyrillic
+- Latin
+- Greek
+- Cyrillic
 
 To provision additional fonts, simply call the `font()` method with an absolute path or URL:
 
@@ -146,76 +150,76 @@ Since version `8.0.0`, it's possible to [overload puppeteer](/typings/chrome-aws
 
 ```typescript
 interface Browser {
-  defaultPage(...hooks: ((page: Page) => Promise<Page>)[])
-  newPage(...hooks: ((page: Page) => Promise<Page>)[])
+  defaultPage(...hooks: ((page: Page) => Promise<Page>)[]);
+  newPage(...hooks: ((page: Page) => Promise<Page>)[]);
 }
 
 interface BrowserContext {
-  defaultPage(...hooks: ((page: Page) => Promise<Page>)[])
-  newPage(...hooks: ((page: Page) => Promise<Page>)[])
+  defaultPage(...hooks: ((page: Page) => Promise<Page>)[]);
+  newPage(...hooks: ((page: Page) => Promise<Page>)[]);
 }
 
 interface Page {
-  block(patterns: string[])
-  clear(selector: string)
-  clickAndWaitForNavigation(selector: string, options?: WaitForOptions)
-  clickAndWaitForRequest(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions)
-  clickAndWaitForRequest(selector: string, predicate: ((request: HTTPRequest) => boolean | Promise<boolean>), options?: WaitTimeoutOptions)
-  clickAndWaitForResponse(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions)
-  clickAndWaitForResponse(selector: string, predicate: ((request: HTTPResponse) => boolean | Promise<boolean>), options?: WaitTimeoutOptions)
-  count(selector: string)
-  exists(selector: string)
-  fillFormByLabel(selector: string, data: Record<string, boolean | string | string[]>)
-  fillFormByName(selector: string, data: Record<string, boolean | string | string[]>)
-  fillFormBySelector(selector: string, data: Record<string, boolean | string | string[]>)
-  fillFormByXPath(selector: string, data: Record<string, boolean | string | string[]>)
-  number(selector: string, decimal?: string, property?: string)
-  selectByLabel(selector: string, ...values: string[])
-  string(selector: string, property?: string)
-  waitForInflightRequests(requests?: number, alpha: number, omega: number, options?: WaitTimeoutOptions)
-  waitForText(predicate: string, options?: WaitTimeoutOptions)
-  waitUntilVisible(selector: string, options?: WaitTimeoutOptions)
-  waitWhileVisible(selector: string, options?: WaitTimeoutOptions)
-  withTracing(options: TracingOptions, callback: (page: Page) => Promise<any>)
+  block(patterns: string[]);
+  clear(selector: string);
+  clickAndWaitForNavigation(selector: string, options?: WaitForOptions);
+  clickAndWaitForRequest(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions);
+  clickAndWaitForRequest(selector: string, predicate: (request: HTTPRequest) => boolean | Promise<boolean>, options?: WaitTimeoutOptions);
+  clickAndWaitForResponse(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions);
+  clickAndWaitForResponse(selector: string, predicate: (request: HTTPResponse) => boolean | Promise<boolean>, options?: WaitTimeoutOptions);
+  count(selector: string);
+  exists(selector: string);
+  fillFormByLabel(selector: string, data: Record<string, boolean | string | string[]>);
+  fillFormByName(selector: string, data: Record<string, boolean | string | string[]>);
+  fillFormBySelector(selector: string, data: Record<string, boolean | string | string[]>);
+  fillFormByXPath(selector: string, data: Record<string, boolean | string | string[]>);
+  number(selector: string, decimal?: string, property?: string);
+  selectByLabel(selector: string, ...values: string[]);
+  string(selector: string, property?: string);
+  waitForInflightRequests(requests?: number, alpha: number, omega: number, options?: WaitTimeoutOptions);
+  waitForText(predicate: string, options?: WaitTimeoutOptions);
+  waitUntilVisible(selector: string, options?: WaitTimeoutOptions);
+  waitWhileVisible(selector: string, options?: WaitTimeoutOptions);
+  withTracing(options: TracingOptions, callback: (page: Page) => Promise<any>);
 }
 
 interface Frame {
-  clear(selector: string)
-  clickAndWaitForNavigation(selector: string, options?: WaitForOptions)
-  clickAndWaitForRequest(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions)
-  clickAndWaitForRequest(selector: string, predicate: ((request: HTTPRequest) => boolean | Promise<boolean>), options?: WaitTimeoutOptions)
-  clickAndWaitForResponse(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions)
-  clickAndWaitForResponse(selector: string, predicate: ((request: HTTPResponse) => boolean | Promise<boolean>), options?: WaitTimeoutOptions)
-  count(selector: string)
-  exists(selector: string)
-  fillFormByLabel(selector: string, data: Record<string, boolean | string | string[]>)
-  fillFormByName(selector: string, data: Record<string, boolean | string | string[]>)
-  fillFormBySelector(selector: string, data: Record<string, boolean | string | string[]>)
-  fillFormByXPath(selector: string, data: Record<string, boolean | string | string[]>)
-  number(selector: string, decimal?: string, property?: string)
-  selectByLabel(selector: string, ...values: string[])
-  string(selector: string, property?: string)
-  waitForText(predicate: string, options?: WaitTimeoutOptions)
-  waitUntilVisible(selector: string, options?: WaitTimeoutOptions)
-  waitWhileVisible(selector: string, options?: WaitTimeoutOptions)
+  clear(selector: string);
+  clickAndWaitForNavigation(selector: string, options?: WaitForOptions);
+  clickAndWaitForRequest(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions);
+  clickAndWaitForRequest(selector: string, predicate: (request: HTTPRequest) => boolean | Promise<boolean>, options?: WaitTimeoutOptions);
+  clickAndWaitForResponse(selector: string, predicate: string | RegExp, options?: WaitTimeoutOptions);
+  clickAndWaitForResponse(selector: string, predicate: (request: HTTPResponse) => boolean | Promise<boolean>, options?: WaitTimeoutOptions);
+  count(selector: string);
+  exists(selector: string);
+  fillFormByLabel(selector: string, data: Record<string, boolean | string | string[]>);
+  fillFormByName(selector: string, data: Record<string, boolean | string | string[]>);
+  fillFormBySelector(selector: string, data: Record<string, boolean | string | string[]>);
+  fillFormByXPath(selector: string, data: Record<string, boolean | string | string[]>);
+  number(selector: string, decimal?: string, property?: string);
+  selectByLabel(selector: string, ...values: string[]);
+  string(selector: string, property?: string);
+  waitForText(predicate: string, options?: WaitTimeoutOptions);
+  waitUntilVisible(selector: string, options?: WaitTimeoutOptions);
+  waitWhileVisible(selector: string, options?: WaitTimeoutOptions);
 }
 
 interface ElementHandle {
-  clear()
-  clickAndWaitForNavigation(options?: WaitForOptions)
-  clickAndWaitForRequest(predicate: string | RegExp, options?: WaitTimeoutOptions)
-  clickAndWaitForRequest(predicate: ((request: HTTPRequest) => boolean | Promise<boolean>), options?: WaitTimeoutOptions)
-  clickAndWaitForResponse(predicate: string | RegExp, options?: WaitTimeoutOptions)
-  clickAndWaitForResponse(predicate: ((request: HTTPResponse) => boolean | Promise<boolean>), options?: WaitTimeoutOptions)
-  fillFormByLabel(data: Record<string, boolean | string | string[]>)
-  fillFormByName(data: Record<string, boolean | string | string[]>)
-  fillFormBySelector(data: Record<string, boolean | string | string[]>)
-  fillFormByXPath(data: Record<string, boolean | string | string[]>)
-  getInnerHTML()
-  getInnerText()
-  number(decimal?: string, property?: string)
-  selectByLabel(...values: string[])
-  string(property?: string)
+  clear();
+  clickAndWaitForNavigation(options?: WaitForOptions);
+  clickAndWaitForRequest(predicate: string | RegExp, options?: WaitTimeoutOptions);
+  clickAndWaitForRequest(predicate: (request: HTTPRequest) => boolean | Promise<boolean>, options?: WaitTimeoutOptions);
+  clickAndWaitForResponse(predicate: string | RegExp, options?: WaitTimeoutOptions);
+  clickAndWaitForResponse(predicate: (request: HTTPResponse) => boolean | Promise<boolean>, options?: WaitTimeoutOptions);
+  fillFormByLabel(data: Record<string, boolean | string | string[]>);
+  fillFormByName(data: Record<string, boolean | string | string[]>);
+  fillFormBySelector(data: Record<string, boolean | string | string[]>);
+  fillFormByXPath(data: Record<string, boolean | string | string[]>);
+  getInnerHTML();
+  getInnerText();
+  number(decimal?: string, property?: string);
+  selectByLabel(...values: string[]);
+  string(property?: string);
 }
 ```
 

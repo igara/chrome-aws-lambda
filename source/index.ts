@@ -160,10 +160,7 @@ class Chromium {
     }
 
     const input = join(__dirname, '..', 'bin');
-    const promises = [
-      LambdaFS.inflate(`${input}/chromium.br`),
-      LambdaFS.inflate(`${input}/swiftshader.tar.br`),
-    ];
+    const promises = [LambdaFS.inflate(`${input}/chromium.br`), LambdaFS.inflate(`${input}/swiftshader.tar.br`)];
 
     if (/^AWS_Lambda_nodejs(?:10|12|14)[.]x$/.test(process.env.AWS_EXECUTION_ENV) === true) {
       promises.push(LambdaFS.inflate(`${input}/aws.tar.br`));
@@ -181,12 +178,7 @@ class Chromium {
       return false;
     }
 
-    const environments = [
-      'AWS_LAMBDA_FUNCTION_NAME',
-      'FUNCTION_NAME',
-      'FUNCTION_TARGET',
-      'FUNCTIONS_EMULATOR',
-    ];
+    const environments = ['AWS_LAMBDA_FUNCTION_NAME', 'FUNCTION_NAME', 'FUNCTION_TARGET', 'FUNCTIONS_EMULATOR'];
 
     return environments.some((key) => process.env[key] !== undefined);
   }
@@ -202,8 +194,9 @@ class Chromium {
     try {
       return require('puppeteer');
     } catch (error) {
-      if (error.code !== 'MODULE_NOT_FOUND') {
-        throw error;
+      const e = error as any;
+      if (e.code !== 'MODULE_NOT_FOUND') {
+        throw e;
       }
 
       return require('puppeteer-core');
